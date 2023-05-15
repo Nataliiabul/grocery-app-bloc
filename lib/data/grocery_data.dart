@@ -33,7 +33,7 @@ class GroceryData {
       'name': 'Oranges',
       'description': 'Ароматные, сладкие, сочные',
       'price': 1.39,
-      'imageUrl': 'https://pro-dachnikov.com/uploads/posts/2021-11/1638043717_141-pro-dachnikov-com-p-apelsin-foto-153.jpg'
+      'imageUrl': 'https://vsegda-pomnim.com/uploads/posts/2022-04/1651212605_25-vsegda-pomnim-com-p-apelsin-frukt-foto-34.jpg'
     },
   ];
 }
