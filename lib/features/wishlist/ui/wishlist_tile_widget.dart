@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app_bloc/features/cart/bloc/cart_bloc.dart';
 import 'package:grocery_app_bloc/features/home/bloc/home_bloc.dart';
 import 'package:grocery_app_bloc/features/home/models/home_product_data_model.dart';
+import 'package:grocery_app_bloc/features/wishlist/bloc/wishlist_bloc.dart';
 
-class CartTileWidget extends StatelessWidget {
+class WishlistTileWidget extends StatelessWidget {
   final ProductDataModel productDataModel;
-  final CartBloc cartBloc;
-  const CartTileWidget(
-      {super.key, required this.productDataModel, required this.cartBloc});
+  final WishlistBloc wishlistBloc;
+  const WishlistTileWidget(
+      {super.key, required this.productDataModel, required this.wishlistBloc});
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +56,10 @@ class CartTileWidget extends StatelessWidget {
               ),
               IconButton(
                   onPressed: () {
-                    cartBloc.add(CartRemoveFromCartEvent(productDataModel: productDataModel));
+                    wishlistBloc.add(WishlistRemoveFromWishlistEvent(
+                        clickedProduct: productDataModel));
                   },
-                  icon: const Icon(Icons.shopping_bag))
+                  icon: const Icon(Icons.favorite))
             ],
           )
         ],
