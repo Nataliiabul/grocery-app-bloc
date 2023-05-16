@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app_bloc/features/cart/bloc/cart_bloc.dart';
-import 'package:grocery_app_bloc/features/home/bloc/home_bloc.dart';
 import 'package:grocery_app_bloc/features/home/models/home_product_data_model.dart';
 import 'package:grocery_app_bloc/features/wishlist/bloc/wishlist_bloc.dart';
 

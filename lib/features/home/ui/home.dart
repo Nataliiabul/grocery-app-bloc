@@ -16,8 +16,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   void initState() {
-    homeBloc.add(HomeInitialEvent());
     super.initState();
+    homeBloc.add(HomeInitialEvent());
   }
 
   final HomeBloc homeBloc = HomeBloc();
@@ -29,17 +29,17 @@ class _HomeState extends State<Home> {
       buildWhen: (previous, current) => current is! HomeActionState,
       listener: (context, state) {
         if (state is HomeNavigateToWishlistPageActionState) {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Wishlist()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Wishlist()));
         } else if (state is HomeNavigateToCartPageActionState) {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Cart()));
-        }
-        else if (state is HomeProductItemWishlistedActionState) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('item wishlisted')));
-        }
-        else if (state is HomeProductItemCartedActionState) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('item carted')));
+              context, MaterialPageRoute(builder: (context) => const Cart()));
+        } else if (state is HomeProductItemWishlistedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(content: Text('item wishlisted')));
+        } else if (state is HomeProductItemCartedActionState) {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(const SnackBar(content: Text('item carted')));
         }
       },
       builder: (context, state) {
@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
               ),
             );
           default:
-            return SizedBox();
+            return const SizedBox();
         }
       },
     );

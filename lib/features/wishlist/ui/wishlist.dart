@@ -14,7 +14,6 @@ class _WishlistState extends State<Wishlist> {
   final WishlistBloc wishlistBloc = WishlistBloc();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     wishlistBloc.add(WishlistInitialEvent());
   }
@@ -41,7 +40,7 @@ class _WishlistState extends State<Wishlist> {
                       productDataModel: successState.wishlistItems[index],
                       wishlistBloc: wishlistBloc);
                 });
-              default: return SizedBox();
+              default: return const SizedBox();
             }
           },
         ));

@@ -14,9 +14,8 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   void initState() {
-    // TODO: implement initState
-    cartBloc.add(CartInitialEvent());
     super.initState();
+    cartBloc.add(CartInitialEvent());
   }
 
   final CartBloc cartBloc = CartBloc();
@@ -25,7 +24,7 @@ class _CartState extends State<Cart> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text('Cart'),
+        title: const Text('Cart'),
       ),
       body: BlocConsumer<CartBloc, CartState>(
         bloc: cartBloc,
@@ -44,7 +43,7 @@ class _CartState extends State<Cart> {
                         productDataModel: successState.cartItems[index]);
                   });
             default:
-              return SizedBox();
+              return const SizedBox();
           }
         },
       ),
